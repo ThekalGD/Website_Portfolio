@@ -1,11 +1,11 @@
 ::webkit-scrollbar{display: none;}
 
 :root {
-    --bg-dark: black;
+    --bg-dark: #000007;
     --text-main: #ffffff;
     --text-muted: #888891;
-    --accent: #27F542;
-    --low-accent: #03440C;
+    --accent: #27C8F5;
+    --low-accent: #27C8F5;
     --border-dim: rgba(255, 255, 255, 0.1);
 }
 

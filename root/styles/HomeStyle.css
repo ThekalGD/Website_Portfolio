@@ -1,10 +1,10 @@
 ::webkit-scrollbar{display: none;}
 
 :root {
-    --bg-color: #000002;
+    --bg-color: #000007;
     --text-primary: #ffffff;
     --text-secondary: #a0a0a0;
-    --accent: #27F542;
+    --accent: #27C8F5; /*27F542*/
     --low-accent: #03440C;
 }
 
@@ -412,6 +412,62 @@ section {width: 100vw;}
 	        gap: 1.5rem;
 	    }
 	    .Socials {
+        	width: 50px;
+        	height: 50px;
+   		}
+	}
+}
+
+.section_6 {
+	padding: 0px 20px 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+	.container_6 {
+		display: flex;
+		gap: 3rem;
+
+		.CV {
+			display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    width: 300px;
+		    height: 50px;
+		    border-radius: 30px;
+		    border: 1px solid rgba(255, 255, 255, 0.3);
+		    transition: all 0.3s ease;
+
+			p {
+				height: auto;
+				width: 50%;
+				object-fit: contain;
+				color : var(--text-primary);
+				font-family: Realtime Rounded Test;
+				font-weight: bold;
+				font-size: 1.1rem;
+				text-align: center;
+				transition: transform 0.3s ease;
+			}
+		}
+
+		.CV:hover {
+			border-color: var(--accent);
+			transform: translateY(-5px);
+			box-shadow: 0 10px 20px rgba(256, 256, 256, 0.05);
+				
+			p {
+				transform: scale(1.15);
+			}
+
+		}
+	}
+
+	@media (max-width: 768px) {
+		.container_4 {
+	        gap: 1.5rem;
+	    }
+	    .CV {
         	width: 50px;
         	height: 50px;
    		}
