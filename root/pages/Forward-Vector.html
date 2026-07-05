@@ -16,7 +16,7 @@
                 <a href="../../index.html">RETURN</a>
                 <a href="#Overview">OVERVIEW</a>
                 <!--<a href="#Responsibilities">RESPONSIBILITIES</a>!-->
-                <a href="#Logs">LOGS</a>
+                <a href="#Logs">MORE ABOUT</a>
             </div>
         </nav>
 
@@ -39,27 +39,91 @@
             <div class="container_3">
                 <div>
                     <h3>PITCH</h3>
-                    <p class="overviewPara"><b>Forward Vector</b> is a 3D platformer auto-runner die-and-retry in first-person. Parkour unique levels filled with traps and obstacles, featuring their own abstract futuristic environment and intense electronic track. To complete a level, you’ll have to navigate the entire course as you jump, strafe, slide, and master your air control without taking any damage. As you complete levels, the game becomes increasingly difficult, gradually introducing new obstacles and mechanics.</br>
+                    <p class="overviewPara"><b>Forward Vector</b> is a 3D platformer auto-runner die-and-retry in first-person. </br>Parkour unique levels filled with traps and obstacles, featuring their own abstract futuristic environment and intense electronic track. To complete a level, you’ll have to navigate the entire course as you jump, strafe, slide, and master your air control without taking any damage. As you complete levels, the game becomes increasingly difficult, gradually introducing new obstacles and mechanics.</br>
                     </br>
                     <a href="https://store.steampowered.com/app/4078140/Forward_Vector/" style="color: #27C8F5;" target="_blank">Steam page link</a></p>
                 </div>
 
                 <div class="contextPara">
                     <h3>CONTEXT</h3>
-                    <p>This project a demo made on Unreal Engine 5 in 5 month an released in Frebruary 2026. Made by a team of 3 peoples, including:</br>
-                        </br>
-                        - Myself: Project leader, Game designer & Developper.</br>
-                        - Jan-Peter: Composer & Sound Designer.</br>
-                        - Loris Gomas: 3D Environment Artist.</br>
-                        </br>
-                        We are still working hard on the full version of the game.
-                     </p>     
+                    <p>Forward Vector is a passion project and a demo developed as a team of three over a focused five-month period. It was released in February 2026, made using Unreal Engine 5. The core development team includes:</br></br>
+
+                    <b>Jan-Peter Itze</b>: Composer & Sound Designer > <a href="https://www.jp-itze.com/" style="color: #27C8F5;" target="_blank">Portfolio</a></br></br>
+
+                    <b>Loris Gomas</b>: 3D Environment Artist > <a href="https://loris_gomas.artstation.com/" style="color: #27C8F5;" target="_blank">Portfolio</a></br></br>
+                    
+                    Myselft: Project Leader, Game Designer & Developer.</br></br>
+                    </p>     
                 </div> 
             </div>
         </section>
 
-<!--
-        <section class="section_4" id="Responsibilities">
+        <section class="section_4">
+            <div class="container_4">
+                <div>
+                    <h3>DEMO PERFORMANCE</h3>
+                    <p class="DemoPerfPara">The demo successfully captured player interest, reaching <b>850+ unique players</b> and inspiring nearly <b>700 wishlists.</b></br></br>
+                    While I designed the 2-hour demo expecting an average play session of 20–30 minutes, players ultimately averaged <b>40 minutes of playtime</b>. The response to the Level Editor was particularly rewarding, while several players spent over 5 hours speedrunning or exploring the demo's limits, a few dedicated creators logged over <b>50 hours</b> building and testing their own levels.</br></br>
+
+                    As my debut release on Steam, seeing this level of engagement and enthousiasm was incredibly rewarding.
+                </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section_5">
+            <div class="container_5">
+                <div>
+                    <h3>SOLVED PROBLEM EXAMPLE</h3>
+                    <p class="SolvedProbPara">In a fast-paced, first-person parkour game where a single collision with the environment means instant death, players need a clear understanding of their character’s bounds.</br>
+
+                    However, first-person cameras are inherently built for immersion, not spatial awareness. Moving a traditional "Geometry Dash" style of gameplay into a first-person perspective created a major design hurdle: </br></br>
+
+                    <b>How do we give players accurate spatial perception when they cannot see their own hitbox?</b></br></br>
+
+                    To solve this, I iterate on various solutions following this process: <b>Brainstorm → Filter → Prototyping → Internal/External Playtest → Refine and Loop if needed.</b></br></br>
+
+                    <b>What leads me to the solution</b></br></br>
+
+                    <b>Selected Configuration // Centered Sphere:</b> Placed the camera at the center of a sphere. Because every hitbox edges are equidistant from the camera, player perception should theoretically be uniform and predictable.</br></br>
+
+                    - <b>Result (Failure):</b> Blind-spot collisions (above/behind the camera) felt completely unfair to players, players expected obstacles to be cleared the moment they passed out of their field of view. Furthermore, the sphere was too wide but shrinking it more would cause the character to be smaller and ruined forward visibility.</br></br>
+
+                    <b>Correction // Elevated Sphere + Offset Camera:</b> Pulled the camera back/up and raised the sphere to shrink it a bit more.</br></br>
+
+                    - <b>Result (Failure but some improvements):</b> Better visibility and cohesive camera placement, but obstacles passed unnaturally underneath the player's feet without registering a collision and the sphere was still to wide.</br></br>
+
+                    <b>Final Solution //</b></br></br>
+
+                    The solution I found abandoned a single primitive shape in favor of balancing three component:</br></br>
+
+                    - <b>Camera Position:</b> Offset upward and backward to maximize forward field of view, removing blind-spot collision.</br>
+                    - <b>Ground Capsule:</b> Extends from the floor to the horizon line, used strictly to manage ground friction, landing ranges, and physics.</br>
+                    - <b>Diamond Lethal Hitbox:</b> A simplified, smaller diamond-shaped polygon that tapers toward the viewpoint. The corners offer a forgiving error margin, and its length is shrunk to 1/2 of its width to perfectly balance front and side distances from the centered camera.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section_6">
+            <div class="container_6">
+                <div>
+                    <h3>LEVEL EDITOR</h3>
+                    <p class="LevelEditorPara">Originally planned for the full release, I spent three months building an Alpha version for the free demo to satisfy community demand. This pivot kept players engaged during the long wait for final launch, provided crucial UX feedback helping me wipe out bugs and figure out which features creators cared about the most, and drastically sped up my own internal level design workflow.</br></br>
+
+                    <b>Alpha Feature Set</b></br></br>
+
+                    - <b>Advanced Manipulation:</b> Fluid object placement featuring grid snapping, world/relative coordinates, centered pivots, duplication, undo, and bindable hotkeys.</br>
+                    - <b>Tweakable Settings:</b> Contextual UI for editing individual object parameters and global world settings on the fly.</br>
+                    - <b>Save, Load & Migration System:</b> Local file saving (shareable via folders) loadable in-game, including a built-in version migration tool to keep old maps compatible with future game updates.</br>
+                    - <b>Online Level Sharing with Node.js Backend:</b> A custom server built from scratch to handle player accounts and in-game online level sharing worldwide.</br>
+                    - <b>And more...</b>
+                    </p>
+                </div>
+            </div>
+        </section>
+ <!--      
+        <section class="section_999" id="Responsibilities">
             <div class="verticalBox">
                 <h3>RESPONSIBILITIES</h3>
                 <div class="horizontalBox">
@@ -92,7 +156,7 @@
 !-->
 
 
-        <section class="section_5" id="Logs">
+        <section class="section_logs" id="Logs">
         </section>
 
         
