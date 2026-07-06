@@ -369,12 +369,12 @@ padding: 0px 20px;
 	}
 }
 
-.section_solution {
+.section_Solution {
 	padding: 0px 20px;
 	align-content: center;
 	height: auto;
 
-	.container_solution {
+	.container_Solution {
 		display: flex;
 		flex-direction: row;
 		gap: 60px;            
