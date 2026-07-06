@@ -96,28 +96,46 @@
 
                     However, first-person cameras are inherently built for immersion, not spatial awareness. Moving a traditional "Geometry Dash" style of gameplay into a first-person perspective created a major design hurdle: </br></br>
 
-                    <b>How do we give players accurate spatial perception when they cannot see their own hitbox?</b></br></br>
+                    <b>How do we give players accurate spatial perception when they cannot see their own character?</b></br></br>
 
-                    To solve this, I iterate on various solutions following this process: <b>Brainstorm → Filter → Prototyping → Internal/External Playtest → Refine and Loop if needed.</b></br></br>
+                    The first elements to tweak were <b>camera position</b> and <b>hitboxes.</b>
+                    To tackel this, I iterate on various configurations following this process: <b>Brainstorm → Filter → Prototyping → Internal/External Playtest → Refine or Loop if needed.</b></br></br>
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                    <b>What leads me to the solution</b></br></br>
+        <section class="section_attempts">
+            <div class="container_attempts">
+                <div>
+                    <h3>CENTERED SPHERE</h3>
+                    <p>Idea: Placed the camera at the center of a sphere. Because every hitbox edges are equidistant from the camera, player perception should theoretically be uniform and predictable.
+                    </br></br>
 
-                    <b>Selected Configuration // Centered Sphere:</b> Placed the camera at the center of a sphere. Because every hitbox edges are equidistant from the camera, player perception should theoretically be uniform and predictable.</br></br>
+                    - <b>Result (Failure):</b> Blind-spot collisions (above/behind the camera) felt completely unfair to players, players expected obstacles to be cleared the moment they passed out of their field of view. Furthermore, the sphere was too wide but shrinking it more would cause the character to be smaller and ruined forward visibility.
+                    </p>
+                </div>
+                <div>
+                    <h3>CORRECTION</h3>
+                    <p>Idea: Pulled the camera back/up and raised the sphere to shrink it a bit more.</br></br>
 
-                    - <b>Result (Failure):</b> Blind-spot collisions (above/behind the camera) felt completely unfair to players, players expected obstacles to be cleared the moment they passed out of their field of view. Furthermore, the sphere was too wide but shrinking it more would cause the character to be smaller and ruined forward visibility.</br></br>
+                    - <b>Result (Failure but some improvements):</b> Better visibility and cohesive camera placement, but obstacles passed unnaturally underneath the player's feet without registering a collision and the sphere was still to wide.
+                </div>
+            </div>
+        </section>
 
-                    <b>Correction // Elevated Sphere + Offset Camera:</b> Pulled the camera back/up and raised the sphere to shrink it a bit more.</br></br>
-
-                    - <b>Result (Failure but some improvements):</b> Better visibility and cohesive camera placement, but obstacles passed unnaturally underneath the player's feet without registering a collision and the sphere was still to wide.</br></br>
-
-                    <b>Final Solution //</b></br></br>
-
-                    The solution I found abandoned a single primitive shape in favor of balancing three component:</br></br>
-
+        <section class="section_solution">
+            <div class="container_solution">
+                <div>
+                    <h3>FINAL SOLUTION</h3>
+                    <p>
                     - <b>Camera Position:</b> Offset upward and backward to maximize forward field of view, removing blind-spot collision.</br>
                     - <b>Ground Capsule:</b> Extends from the floor to the horizon line, used strictly to manage ground friction, landing ranges, and physics.</br>
                     - <b>Diamond Lethal Hitbox:</b> A simplified, smaller diamond-shaped polygon that tapers toward the viewpoint. The corners offer a forgiving error margin, and its length is shrunk to 1/2 of its width to perfectly balance front and side distances from the centered camera.
                     </p>
+                </div>
+                <div>
+                    <img src="../contents/images/Forward-Vector_CollisionSchema.png" alt="Image 1">
                 </div>
             </div>
         </section>
@@ -139,6 +157,15 @@
                 </div>
             </div>
         </section>
+
+        <section class="section_EditorShowcase" id="Overview">
+            <div class="container_EditorShowcase">
+                <video controls>
+                    <source src="../contents/videos/Forward-Vector_EditorShowcase.mp4">
+                </video>
+            </div>
+        </section>
+
  <!--      
         <section class="section_999" id="Responsibilities">
             <div class="verticalBox">
@@ -171,11 +198,22 @@
             </div>
         </section>
 !-->
-
-
+<!--  
+        <hr class="logs_separation">
         <section class="section_logs" id="Logs">
+            <div class="container_logs">
+                <div class="logs_item">
+                    <img src="../contents/images/Forward-Vector_CollisionSchema.png" alt="Image 1">
+                </div>
+                <div class="logs_item">
+                    <img src="../contents/images/Forward-Vector_CollisionSchema.png" alt="Image 1">
+                </div>
+                <div class="logs_item">
+                    <img src="../contents/images/Forward-Vector_CollisionSchema.png" alt="Image 1">
+                </div>
+            </div>
         </section>
-
+!-->
         
     <section class="BottomPage">
         <p>> Thekal Lucas - Game Designer<span class="blink">_</span></p>
