@@ -108,7 +108,7 @@ h3 {
 		.Role {
 		    margin-bottom: 10px;
 			color : #ffffff;
-			font-family: IBM Plex Mono;
+			font-family: IBM Plex Mono, monospace;
 			font-weight: 900;
 			/*font-weight: bold;*/
 			font-size: clamp(2.5rem, 8vw, 5rem);
