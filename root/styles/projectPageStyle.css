@@ -9,6 +9,18 @@
     --border-dim: rgba(255, 255, 255, 0.1);
 }
 
+@font-face {
+  font-family: 'Realtime Rounded Test';
+  src: url('../fonts/realtimeroundedtest-regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../fonts/IBMPlexMono-semibold.ttf') format('truetype');
+  font-display: swap;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -645,7 +657,7 @@ padding: 0px 20px;
 
 	p {
 		color : var(--text-primary);
-		font-family: 'IBM Plex Mono', monospace;
+		font-family: 'Realtime Rounded Test', monospace;
 		font-size: 0.85rem;
 		letter-spacing: 0.1em;
 	}
