@@ -88,7 +88,7 @@ section {width: 100vw;}
 	    max-width: 1200px;
 
 		.Name {
-			margin-left: 6%;
+			margin-left: 6%; /*Was 6% margin*/
             margin-bottom: 0.2rem;
             margin-top: 0;
 			color : var(--text-secondary);
@@ -98,18 +98,18 @@ section {width: 100vw;}
 			letter-spacing: 0.35em;
 		}
 
-		.Role {
+		.PrimRole {
 			margin: 0;
 			color : var(--text-primary);
 			font-family: IBM Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 			font-weight: 800;
-			font-size: clamp(2.5rem, 8vw, 7.5rem);;
+			font-size: clamp(2.5rem, 8vw, 7.5rem);
 			letter-spacing: 0.02em;
 			line-height:1;
 			transition: text-shadow 0.4s ease, letter-spacing 0.4s ease;
 		}
 
-		.Role:hover {
+		.PrimRole:hover {
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             letter-spacing: 0.04em;
             cursor: default;
