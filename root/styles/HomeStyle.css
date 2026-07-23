@@ -98,7 +98,7 @@ section {width: 100vw;}
 			letter-spacing: 0.35em;
 		}
 
-		.PrimRole {
+		.primRole {
 			margin: 0;
 			color : var(--text-primary);
 			font-family: IBM Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -109,7 +109,7 @@ section {width: 100vw;}
 			transition: text-shadow 0.4s ease, letter-spacing 0.4s ease;
 		}
 
-		.PrimRole:hover {
+		.primRole:hover {
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             letter-spacing: 0.04em;
             cursor: default;
